@@ -48,10 +48,10 @@ namespace EmailOrSMSLib
                 message.From = new MailAddress(sFromAddress, "First Source");
                 message.BodyEncoding = Encoding.UTF8;
                 AlternateView htmlView = AlternateView.CreateAlternateViewFromString(message.Body, null, "text/html");
-                //LinkedResource logo = new LinkedResource(@"C:\Providerportalsvc\LoginService\Firstsource-logo.png", "image/png");
-               // LinkedResource logo = new LinkedResource(@"D:\ProviderPortal\Release_folders\fshealth-apiservices-restructured-code\FSHealthCare\FSHealthBackend\LoginService\Firstsource-logo.png", "image/png");
-                //logo.ContentId = "logoImage"; // set a unique content ID
-                //htmlView.LinkedResources.Add(logo);
+                LinkedResource logo = new LinkedResource(@"C:\Providerportalsvc\LoginService\Firstsource-logo.png", "image/png");
+                //LinkedResource logo = new LinkedResource(@"D:\ProviderPortal\Release_folders\fshealth-apiservices-restructured-code\FSHealthCare\FSHealthBackend\LoginService\Firstsource-logo.png", "image/png");
+                logo.ContentId = "logoImage"; // set a unique content ID
+                htmlView.LinkedResources.Add(logo);
                 message.AlternateViews.Add(htmlView);
                 message.IsBodyHtml = true;
 
